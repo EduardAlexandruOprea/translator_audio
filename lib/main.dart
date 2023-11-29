@@ -48,6 +48,7 @@ class LanguageTiles extends StatelessWidget {
           label: '$phrase $languageLabel',
           assetPath: assetPath,
           onTap: () async {
+              await audioPlayer.stop();
               await audioPlayer.setSource(AssetSource(assetPath));
               await audioPlayer.resume();
           },
